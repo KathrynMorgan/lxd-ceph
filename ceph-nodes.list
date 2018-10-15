@@ -1,0 +1,12 @@
+#lxc list --format=csv -c n | grep ceph
+ceph-ctl-c01
+cephmon01
+cephmon02
+cephmon03
+cephmon04
+cephosd10
+cephosd11
+cephosd12
+cephosd13
+cephosd14
+cephosd15

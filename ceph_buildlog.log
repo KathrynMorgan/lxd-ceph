@@ -1,0 +1,247 @@
+ 2168  fio-status
+ 2169  lxc exec ppa bash
+ 2170  clear
+ 2171  lxc exec ceph-ctl-c01 bash
+ 2172  celar
+ 2173  clear
+ 2174  lxc list
+ 2175  vim deploy.sh 
+ 2176  chmod +x deploy.sh
+ 2177  ./deploy.sh 
+ 2178  vim deploy.sh 
+ 2179  ./deploy.sh 
+ 2180  lxc exec cdphosd15
+ 2181  lxc exec cdphosd15 bash
+ 2182  lxc exec cephosd15 bash
+ 2183  mkdir /tmp/fioa /tmp/fiob/ /tmp/fioc /tmp/fiod /tmp/fioe /tmp/fiof
+ 2184  for i in [ ls /dev/fio* ]; do mount /dev/$i /tmp/$i; done
+ 2185  for i in [ ls /dev/fio* ]; do mount $i /tmp/$i; done
+ 2186  for i in [ ls /dev/fio* | cut 3 ]; do echo $i; done
+ 2187  for i in $( ls /dev/fio* | cut 3 ); do echo $i; done
+ 2188  for i in $( ls /dev/fio* | cut -t 3 ); do echo $i; done
+ 2189  ls /dev/fio* | cut -t 3
+ 2190  ls /dev/fio* | cut --help
+ 2191  ls /dev/fio* | cut -d 3
+ 2192  ls /dev/fio* | cut -c 3
+ 2193  ls /dev/fio* | cut -f 3
+ 2194  ls /dev/fio* | cut -f 
+ 2195  ls /dev/fio* | cut
+ 2196  ls /dev/fio* | cut --output-delimiter=/dev/
+ 2197  ls /dev/fio* | cut --output-delimiter=dev
+ 2198  ls /dev/fio* | cut -c2
+ 2199  ls /dev/fio* | cut -d/ 2
+ 2200  ls /dev/fio* | cut -d/ 1
+ 2201  ls /dev/fio* | cut -c5-
+ 2202  ls /dev/fio* | cut -c6-
+ 2203  for i in $( ls /dev/fio* | cut -c6- ); do echo $i; done
+ 2204  for i in $( ls /dev/fio* | cut -c6- ); do mount /dev/$i /tmp/$i; done
+ 2205  lsblk
+ 2206  for i in $( ls /dev/fio* | cut -c6- ); chown 100000:100000 /tmp/$i; done
+ 2207  for i in $( ls /dev/fio* | cut -c6- ); echo /tmp/$i ; done
+ 2208  for i in $( ls /dev/fio* | cut -c6- ); do chown 100000:100000 /tmp/$i; done
+ 2209  ls -lah /tmp/*
+ 2210  clear
+ 2211  for i in $( ls /dev/fio* | cut -c6- ); do umount /tmp/$i; done
+ 2212  lsblk
+ 2213  clear
+ 2214  lxc list
+ 2215  lxc restart cephmon01
+ 2216  lxc restart cephosd10
+ 2217  lxc restart cephosd11
+ 2218  lxc restart cephosd12
+ 2219  lxc restart cephosd13; lxc restart cephosd14; lxc restart cephosd15
+ 2220  clear
+ 2221  for i in $( ls /dev/fio* | cut -c6- ); do mount /dev/$i /tmp/$i; done
+ 2222  lsblk
+ 2223  for i in $( ls /dev/fio* | cut -c6- ); do umount /dev/$i /tmp/$i; done
+ 2224  lsblk
+ 2225  lxc stop cephosd10
+ 2226  *
+ 2227  lxc stop cephosd1*
+ 2228  lxc stop cephosd11
+ 2229  for i in [cephosd10,cephosd11,cephosd12,cephosd13,cephosd14,cephosd15]; do lxc stop $i; done
+ 2230  for i in [cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15]; do lxc stop $i; done
+ 2231  lxc list
+ 2232  for i in [ cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15 ]; do lxc stop $i; done
+ 2233  lxc list
+ 2234  for i in $( ls /dev/fio* | cut -c6- ); do parted -a opt /dev/$i mkpart primary btrfs 0% 100% ; done
+ 2235  for i in $( ls /dev/fio* | cut -c6- ); do parted /dev/$i mklabel gpt ; done
+ 2236  partprobe 
+ 2237  lsblk
+ 2238  parted -h
+ 2239  parted -a opt /dev/fioa mkpart primary btrfs
+ 2240  parted -a opt /dev/fioa --script mklabel gpt mkpart primary btrfs 0% 100%
+ 2241  lsblk
+ 2242  for i in $( ls /dev/fio* | cut -c6- ); do parted -a opt /dev/fioa --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2243  lsblk
+ 2244  for i in $( ls /dev/fio* | cut -c6- ); do parted -a opt /dev/$i --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2245  lsblk
+ 2246  echo "for i in $( ls /dev/fio* | cut -c6- ); do parted -a opt /dev/$i --script mklabel gpt mkpart primary btrfs 0% 100% ; done" >>server_config/lxd/README 
+ 2247  clear
+ 2248  partprobe 
+ 2249  echo "for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i ; done
+
+ 2250  echo "for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i
+
+done
+ 2251  echo for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i ; done
+ 2252  echo for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i
+ 2253  for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i ; done
+ 2254  clear
+ 2255  lsblk
+ 2256  for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -f -L $i /dev/$i ; done
+ 2257  lsblk 
+ 2258  lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,FSTYPE
+ 2259  for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -f -L $i /dev/$i ; done
+ 2260  fdisk  -l /dev/fio*
+ 2261  lsblk
+ 2262  for i in [ fioa fiob fioc fiod fioe fiof ]; do parted -a opt /dev/$i --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2263  for i in [ /dev/fioa /dev/fiob /dev/fioc /dev/fiod /dev/fioe /dev/fiof ]; do parted -a opt $i --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2264  lsblk
+ 2265  for i in /dev/fioa /dev/fiob /dev/fioc /dev/fiod /dev/fioe /dev/fiof ; do parted -a opt $i --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2266  lsblk
+ 2267  for i in fioa1 fiob1 fioc1 fiod1 fioe1 fiof1; do mkfs.btrfs -f -L $i /dev/$i ; done
+ 2268  fdisk  -l /dev/fio*
+ 2269  lsblk
+ 2270  fdisk  -l /dev/fiof
+ 2271  fdisk  -l /dev/fiof1
+ 2272  fdisk  -l /dev/fioe
+ 2273  fdisk  -l /dev/fioe1
+ 2274  clear
+ 2275  vim deploy.sh 
+ 2276  clear
+ 2277  ./deploy.sh 
+ 2278  vim deploy.sh 
+ 2279  lxc config device show cephosd15
+ 2280  vim deploy.sh 
+ 2281  cp deploy.sh undo.sh
+ 2282  vim deploy.sh 
+ 2283  vim undo.sh 
+ 2284  ./undo.sh 
+ 2285  vim deploy.sh 
+ 2286  clear
+ 2287  rm -rf /tmp/fio*
+ 2288  history | grep for
+ 2289  history | grep for | grep mount
+ 2290  for i in $( ls /dev/fio* | cut -c6- ); do mkdir /tmp/$i ; mount /dev/$i /tmp/$i; done
+ 2291  partprobe
+ 2292  ls /tmp/
+ 2293  lsblk
+ 2294  rm /tmp/fioa
+ 2295  rm -rf /tmp/fioa
+ 2296  rm -rf /tmp/fiob
+ 2297  rm -rf /tmp/fioc
+ 2298  rm -rf /tmp/fiod
+ 2299  rm -rf /tmp/fioe
+ 2300  rm -rf /tmp/fiof
+ 2301  ls /tmp/
+ 2302  clear
+ 2303  ls /tmp/
+ 2304  history | grep chown
+ 2305  for i in $( ls /tmp/fio* ); do chown -R 100000:100000 $i; done
+ 2306  ls /tmp/fioa1/
+ 2307  lsblk
+ 2308  for i in $( ls /tmp/fio* ); do echo $i; done
+ 2309  for i in $( ls /tmp/fio* | cut -c12- ); do echo $i; done
+ 2310  for i in $( ls /tmp/fio* | cut -c11- ); do echo $i; done
+ 2311  for i in $( ls /tmp/fio* | cut -c10- ); do echo $i; done
+ 2312  for i in $( ls /tmp/fio* | cut -c9- ); do echo $i; done
+ 2313  for i in $( ls /tmp/fio* | cut -c6- ); do echo $i; done
+ 2314  for i in $( ls /tmp/fio* | cut -c-11 ); do echo $i; done
+ 2315  for i in $( ls /tmp/fio* | cut -c-10 ); do echo $i; done
+ 2316  for i in $( ls /tmp/fio* | cut -c-10 ); do ; done
+ 2317  history
+ 2318  for i in $( ls /tmp/fio* | cut -c-10 ); do chown -R 100000:100000 $i ; done
+ 2319  clear
+ 2320  lsblk
+ 2321  for i in $( ls /tmp/fio* | cut -c-10 ); do umount $i ; done
+ 2322  lslbk
+ 2323  lsblk
+ 2324  clear
+ 2325  ./deploy.sh 
+ 2326  lxc start cephosd15
+ 2327  lxc exec cephosd15
+ 2328  lxc exec cephosd15 bash
+ 2329  clear
+ 2330  for i in $( ls /dev/fio* | cut -c6- ); do mount /dev/$i /tmp/$i; done
+ 2331  lsblk
+ 2332  for i in $( ls /dev/fio* | cut -c6- ); do touch 123 /tmp/$i/; done
+ 2333  ls /tmp/fio*
+ 2334  ls /tmp/fio*/
+ 2335  touch 1 /tmp/fioa1/
+ 2336  ls /tmp/fioa1/
+ 2337  touch /tmp/fioa1/123
+ 2338  ls /tmp/fioa1/
+ 2339  for i in $( ls /dev/fio* | cut -c6- ); do touch /tmp/$i/123; done
+ 2340  clear
+ 2341  ls /tmp/fio*/
+ 2342  clear
+ 2343  for i in $( ls /dev/fio* | cut -c6- ); do umount /dev/$i /tmp/$i; done
+ 2344  lxc start cephosd15; lxc exec cephosd15 bash
+ 2345  clear
+ 2346  cp deploy.sh permissions.sh
+ 2347  vim permissions.sh 
+ 2348  ./permissions.sh 
+ 2349  clear
+ 2350  cat permissions.sh 
+ 2351  vim permissions.sh 
+ 2352  ./permissions.sh 
+ 2353  clear
+ 2354  cat permissions.sh 
+ 2355  vim permissions.sh 
+ 2356  ./permissions.sh 
+ 2357  clear
+ 2358  lxc start cephosd15; lxc exec cephosd15 bash
+ 2359  history | grep "lxc stop"
+ 2360  for i in [cephosd10,cephosd11,cephosd12,cephosd13,cephosd14,cephosd15]; do lxc start $i; done
+ 2361  for i in [ cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15 ]; do lxc start $i; done
+ 2362  lxc list
+ 2363  clear
+ 2364  for i in [ cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15 ]; do lxc snapshot $i; done
+ 2365  for i in cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15; do lxc snapshot $i; echo "done"; done
+ 2366  clear
+ 2367  history 200 >>ceph_buildlog.log
+for i in [ ls /dev/fio* ]; do mount /dev/$i /tmp/$i; done
+ 2185  for i in [ ls /dev/fio* ]; do mount $i /tmp/$i; done
+ 2186  for i in [ ls /dev/fio* | cut 3 ]; do echo $i; done
+ 2187  for i in $( ls /dev/fio* | cut 3 ); do echo $i; done
+ 2188  for i in $( ls /dev/fio* | cut -t 3 ); do echo $i; done
+ 2203  for i in $( ls /dev/fio* | cut -c6- ); do echo $i; done
+ 2204  for i in $( ls /dev/fio* | cut -c6- ); do mount /dev/$i /tmp/$i; done
+ 2206  for i in $( ls /dev/fio* | cut -c6- ); chown 100000:100000 /tmp/$i; done
+ 2207  for i in $( ls /dev/fio* | cut -c6- ); echo /tmp/$i ; done
+ 2208  for i in $( ls /dev/fio* | cut -c6- ); do chown 100000:100000 /tmp/$i; done
+ 2211  for i in $( ls /dev/fio* | cut -c6- ); do umount /tmp/$i; done
+ 2221  for i in $( ls /dev/fio* | cut -c6- ); do mount /dev/$i /tmp/$i; done
+ 2223  for i in $( ls /dev/fio* | cut -c6- ); do umount /dev/$i /tmp/$i; done
+ 2229  for i in [cephosd10,cephosd11,cephosd12,cephosd13,cephosd14,cephosd15]; do lxc stop $i; done
+ 2230  for i in [cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15]; do lxc stop $i; done
+ 2232  for i in [ cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15 ]; do lxc stop $i; done
+ 2234  for i in $( ls /dev/fio* | cut -c6- ); do parted -a opt /dev/$i mkpart primary btrfs 0% 100% ; done
+ 2235  for i in $( ls /dev/fio* | cut -c6- ); do parted /dev/$i mklabel gpt ; done
+ 2242  for i in $( ls /dev/fio* | cut -c6- ); do parted -a opt /dev/fioa --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2244  for i in $( ls /dev/fio* | cut -c6- ); do parted -a opt /dev/$i --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2246  echo "for i in $( ls /dev/fio* | cut -c6- ); do parted -a opt /dev/$i --script mklabel gpt mkpart primary btrfs 0% 100% ; done" >>server_config/lxd/README 
+ 2249  echo "for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i ; done
+ 2250  echo "for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i
+ 2251  echo for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i ; done
+ 2252  echo for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i
+ 2253  for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -L $i /dev/$i ; done
+ 2256  for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -f -L $i /dev/$i ; done
+ 2259  for i in [ fioa1 fiob1 fioc1 fiod1 fioe1 fiof1 ]; do mkfs.btrfs -f -L $i /dev/$i ; done
+ 2262  for i in [ fioa fiob fioc fiod fioe fiof ]; do parted -a opt /dev/$i --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2263  for i in [ /dev/fioa /dev/fiob /dev/fioc /dev/fiod /dev/fioe /dev/fiof ]; do parted -a opt $i --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2265  for i in /dev/fioa /dev/fiob /dev/fioc /dev/fiod /dev/fioe /dev/fiof ; do parted -a opt $i --script mklabel gpt mkpart primary btrfs 0% 100% ; done
+ 2267  for i in fioa1 fiob1 fioc1 fiod1 fioe1 fiof1; do mkfs.btrfs -f -L $i /dev/$i ; done
+ 2288  history | grep for
+ 2289  history | grep for | grep mount
+for i in $( ls /dev/fio* | cut -c6- ); do mkdir /tmp/$i ; mount /dev/$i /tmp/$i; done
+
+for i in $( ls /tmp/fio* | cut -c-10 ); do echo $i; done
+for i in $( ls /tmp/fio* | cut -c-10 ); do chown -R 100000:100000 $i ; done
+
+for i in $( ls /dev/fio* | cut -c6- ); do mount /dev/$i /tmp/$i; done
+for i in $( ls /dev/fio* | cut -c6- ); do touch /tmp/$i/123; done
+for i in $( ls /dev/fio* | cut -c6- ); do umount /dev/$i /tmp/$i; done
+for i in cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15; do lxc snapshot $i; echo "done"; done
+for i in  cephosd10 cephosd11 cephosd12 cephosd13 cephosd14 cephosd15; do lxc stop $i ; echo "$i done"; done
